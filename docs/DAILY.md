@@ -24,13 +24,13 @@ flowchart LR
 
 - [x] Scaffold four-repo FDE roadmaps
 - [x] Add spine diagram, marks, and this daily file
-- [ ] Push `agentic-ops` `main` (create GitHub repo if missing)
-- [ ] Push overlay branches `docs/fde-roadmap`
-- Next engineering gate after push: **OPS-05** hybrid retrieval
+- [x] Push `agentic-ops` `main` — https://github.com/moisestech/agentic-ops
+- [x] Push overlay branches `docs/fde-roadmap`
+- Next engineering gate: **OPS-05** hybrid retrieval
 
 ## Tomorrow
 
-Push remotes if still local-only, then start OPS-05 in `agentic-ops`.
+Open this repo and say **continue**. Start OPS-05 (pgvector hybrid retrieval).
 
 ## Board
 
@@ -52,7 +52,7 @@ Push remotes if still local-only, then start OPS-05 in `agentic-ops`.
 - Shipped agentic-ops runtime extras (MCP-shaped tools, demo replay, two scenarios, engagement + interview docs).
 - Added per-repo FDE roadmaps.
 - Added spine SVG/PNG, ops mark, and this daily protocol.
-- GitHub push still pending approval in this environment.
+- Published https://github.com/moisestech/agentic-ops and overlay `docs/fde-roadmap` branches.
 
 ## Visuals to keep current
 
