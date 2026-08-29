@@ -1,6 +1,27 @@
 # FDE portfolio spine
 
+<p align="center">
+  <img src="assets/ops-mark.svg" alt="Agentic Ops mark: retrieve, tool, pause, record" width="88" />
+</p>
+
+<p align="center">
+  <img src="assets/fde-spine.svg" alt="Four-repo FDE spine: Agentic Ops, Evidence, Field Kit, Provenance" width="720" />
+</p>
+
 This is the **AI-engineering + FDE-craft** repo. The other three existing repos cover governance, creative delivery, and production OSS. There is no fifth product repo and no Interview Kickstart project clones.
+
+Daily protocol: [`DAILY.md`](DAILY.md).
+
+```mermaid
+flowchart LR
+  ops[agenticOps]
+  aep[evidencePipeline]
+  flora[fieldKit]
+  comfy[provenance]
+  ops --> aep
+  ops --> flora
+  ops --> comfy
+```
 
 | Repo | Lane | Open this for |
 | --- | --- | --- |

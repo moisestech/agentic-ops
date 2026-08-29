@@ -1,0 +1,15 @@
+---
+description: Daily FDE portfolio session protocol
+alwaysApply: true
+---
+
+# FDE daily work
+
+At session start, read [`docs/DAILY.md`](docs/DAILY.md) and [`docs/FDE-ROADMAP.md`](docs/FDE-ROADMAP.md).
+
+- One gate per session. Prefer the row marked **next** on the daily board.
+- Do not create Interview Kickstart toy repos or a fifth product.
+- Fine-tuning stays out of scope.
+- When a gate lands, update the status table, the daily log, and any mermaid that no longer matches the code.
+- Sister repos: `agentic-evidence-pipeline` (governance), `flora-field-kit` (creative), `comfyui-output-provenance` (OSS quality). Do not duplicate their jobs here.
+- Keep claims honest: Building until demo + evals + the named verification command are true.

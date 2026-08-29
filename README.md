@@ -1,6 +1,14 @@
+<p align="center">
+  <img src="docs/assets/ops-mark.svg" alt="Agentic Ops mark" width="88" />
+</p>
+
 # Agentic Ops
 
 ### Retrieve. Cite. Pause. Record.
+
+<p align="center">
+  <img src="docs/assets/fde-spine.svg" alt="FDE portfolio spine: four repos" width="720" />
+</p>
 
 A governed agent system that answers from approved institutional records, proposes operational actions, waits for a person, and writes an auditable execution record.
 
