@@ -1,0 +1,83 @@
+{
+  "id": "demo-creative-program-001",
+  "status": "executed",
+  "question": "Prepare a six-week creative technology program launch: schedule, budget, equipment, and staff capacity.",
+  "org_slug": "creative-program",
+  "answer": "A six-week creative technology program can launch if Saturday Lab hours, two instructors, and the equipment checkout window stay inside the $4,800 cap. Tools used: search_documents, check_calendar, calculate_budget, manage_actions. Citations: program-brief:1, staff-capacity:1.",
+  "citations": [
+    {
+      "passage_id": "program-brief:1",
+      "source_id": "program-brief",
+      "title": "Six-week creative technology program",
+      "quote": "The program runs six weeks, Saturday mornings, with a published intake path and an exit ticket.",
+      "score": 0.82
+    },
+    {
+      "passage_id": "staff-capacity:1",
+      "source_id": "staff-capacity",
+      "title": "Staff capacity",
+      "quote": "Two instructors and one lab technician can cover the Saturday window if no second venue is added.",
+      "score": 0.71
+    }
+  ],
+  "proposed_action": {
+    "action_type": "file_program_plan",
+    "title": "File six-week program plan (internal record)",
+    "draft": "Cited program brief, calendar constraints, and budget check. This draft stays internal until a human approves it.",
+    "risk": "medium",
+    "destination": "internal_record"
+  },
+  "evaluation": {
+    "grounded": true,
+    "policy_ok": true,
+    "requires_approval": true,
+    "reasons": ["Consequential action requires a human approval interrupt."],
+    "unsupported_claims": []
+  },
+  "approval": {
+    "decision": "approved",
+    "note": "Replay: approved for the internal record only.",
+    "edited_draft": null,
+    "decided_at": "2026-08-29T15:00:00+00:00"
+  },
+  "outcome": "executed",
+  "trace": [
+    {"at": "2026-08-29T14:59:40+00:00", "node": "retrieve", "detail": "2 passages", "data": {}},
+    {"at": "2026-08-29T14:59:41+00:00", "node": "tools", "detail": "search_documents, check_calendar, calculate_budget, manage_actions", "data": {}},
+    {"at": "2026-08-29T14:59:42+00:00", "node": "draft", "detail": "fake", "data": {}},
+    {"at": "2026-08-29T14:59:43+00:00", "node": "evaluate", "detail": "grounding+policy", "data": {}},
+    {"at": "2026-08-29T14:59:50+00:00", "node": "await_approval", "detail": "interrupt resumed", "data": {}},
+    {"at": "2026-08-29T14:59:51+00:00", "node": "execute", "detail": "wrote internal audit record only", "data": {}}
+  ],
+  "latency_ms": 1180,
+  "token_usage": {"prompt_tokens": 160, "completion_tokens": 72},
+  "estimated_cost_usd": 0.0,
+  "tool_calls": [
+    {
+      "name": "search_documents",
+      "permission": "READ",
+      "arguments": {"query": "six-week program", "org_slug": "creative-program"},
+      "result": {"count": 2}
+    },
+    {
+      "name": "check_calendar",
+      "permission": "READ",
+      "arguments": {"org_slug": "creative-program"},
+      "result": {"available": true, "weeks": 6}
+    },
+    {
+      "name": "calculate_budget",
+      "permission": "READ",
+      "arguments": {"org_slug": "creative-program"},
+      "result": {"total": 4650, "cap": 4800, "within_cap": true}
+    },
+    {
+      "name": "manage_actions",
+      "permission": "WRITE",
+      "arguments": {"org_slug": "creative-program"},
+      "result": {"status": "pending_approval"}
+    }
+  ],
+  "created_at": "2026-08-29T14:59:40+00:00",
+  "updated_at": "2026-08-29T15:00:00+00:00"
+}

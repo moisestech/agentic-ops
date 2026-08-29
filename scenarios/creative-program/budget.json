@@ -1,0 +1,10 @@
+{
+  "currency": "USD",
+  "cap": 4800,
+  "line_items": [
+    {"name": "consumables", "amount": 900},
+    {"name": "backup nozzles", "amount": 250},
+    {"name": "shared license seats", "amount": 1800},
+    {"name": "guest technician Saturday 6", "amount": 1700}
+  ]
+}

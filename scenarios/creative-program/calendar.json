@@ -1,0 +1,8 @@
+{
+  "available": true,
+  "weeks": 6,
+  "window": "Saturday 10:00-13:00",
+  "blocked": ["week-3 instructor A"],
+  "staff": ["instructor-a", "instructor-b", "lab-technician"],
+  "note": "Do not add a second venue without a new hire."
+}

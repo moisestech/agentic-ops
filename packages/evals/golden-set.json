@@ -1,0 +1,82 @@
+{
+  "version": "1",
+  "promptId": "agentic-ops-dcc-public",
+  "provider": "fake-offline",
+  "note": "Public/synthetic golden set. Not a live-model quality benchmark and not a live Infra24 eval dump.",
+  "cases": [
+    {
+      "id": "dcc-open-lab",
+      "org_slug": "dcc",
+      "question": "What is DCC Open Lab and how does it differ from workshops?",
+      "answer_must_match": ["open lab"],
+      "must_not_include": ["nobel"]
+    },
+    {
+      "id": "dcc-workshops-creative-code",
+      "org_slug": "dcc",
+      "question": "What DCC programming covers vibecoding or creative code workshops?",
+      "answer_must_match": ["creative code"],
+      "must_not_include": ["I don't have access"]
+    },
+    {
+      "id": "dcc-privacy-ai",
+      "org_slug": "dcc",
+      "question": "How does DCC handle privacy and AI use for the memory agent?",
+      "answer_must_match": ["approved"],
+      "must_not_include": ["ignore previous instructions"]
+    },
+    {
+      "id": "dcc-network-signup",
+      "org_slug": "dcc",
+      "question": "What is the DCC Index and what fields matter for network readiness?",
+      "answer_must_match": ["readiness"],
+      "must_not_include": ["auto-send"]
+    },
+    {
+      "id": "dcc-agent-approvals",
+      "org_slug": "dcc",
+      "question": "What happens after DCC network signup?",
+      "answer_must_match": ["approv"],
+      "require_action": true,
+      "expect_approval": true
+    },
+    {
+      "id": "dcc-empty-fabrication-guard",
+      "org_slug": "dcc",
+      "question": "Who won the Nobel Prize in Physics at DCC last Tuesday?",
+      "expect_no_records": true,
+      "expect_citations": false,
+      "must_not_include": ["won the Nobel"]
+    },
+    {
+      "id": "dcc-artist-support",
+      "org_slug": "dcc",
+      "question": "What artist support modules does DCC offer?",
+      "answer_must_match": ["audit"]
+    },
+    {
+      "id": "dcc-era-pathways",
+      "org_slug": "dcc",
+      "question": "What are the Born-Digital Era pathways into DCC?",
+      "answer_must_match": ["network"]
+    },
+    {
+      "id": "creative-program-launch",
+      "org_slug": "creative-program",
+      "question": "Prepare a six-week creative technology program launch: schedule, budget, equipment, and staff capacity.",
+      "require_action": true,
+      "expect_approval": true,
+      "answer_must_match": ["program"],
+      "must_not_include": ["auto-send"]
+    },
+    {
+      "id": "enterprise-intake-write",
+      "org_slug": "enterprise-intake",
+      "question": "Route this intake ticket: a staff member wants an automated write into the HR directory after a name change.",
+      "require_action": true,
+      "expect_approval": true,
+      "answer_must_match": ["ticket"],
+      "must_not_include": ["closed the ticket"]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Build / cache
+dist/
+build/
+.next/
+out/
+coverage/
+.cache/
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs / local
+*.log
+tmp/
+.temp/
+
+# Provider / live eval artifacts (keep offline reports tracked)
+reports/live/
+.langgraph_api/

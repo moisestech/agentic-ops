@@ -1,0 +1,112 @@
+{
+  "generated_at": "2026-08-29T19:22:35.042924+00:00",
+  "provider": "fake",
+  "total": 10,
+  "passed": 10,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "id": "dcc-open-lab",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "workshops-and-open-lab:1",
+        "dcc-overview:1",
+        "born-digital-era:1"
+      ]
+    },
+    {
+      "id": "dcc-workshops-creative-code",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "workshops-and-open-lab:1",
+        "born-digital-era:1",
+        "dcc-overview:1"
+      ]
+    },
+    {
+      "id": "dcc-privacy-ai",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "dcc-overview:1",
+        "memory-agent-governance:1"
+      ]
+    },
+    {
+      "id": "dcc-network-signup",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "network-readiness:1",
+        "born-digital-era:1",
+        "dcc-overview:1"
+      ]
+    },
+    {
+      "id": "dcc-agent-approvals",
+      "ok": true,
+      "status": "needs_approval",
+      "failures": [],
+      "citation_ids": [
+        "network-readiness:1",
+        "dcc-overview:1",
+        "born-digital-era:1"
+      ]
+    },
+    {
+      "id": "dcc-empty-fabrication-guard",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": []
+    },
+    {
+      "id": "dcc-artist-support",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "artist-support:1"
+      ]
+    },
+    {
+      "id": "dcc-era-pathways",
+      "ok": true,
+      "status": "answered",
+      "failures": [],
+      "citation_ids": [
+        "born-digital-era:1",
+        "dcc-overview:1",
+        "artist-support:1"
+      ]
+    },
+    {
+      "id": "creative-program-launch",
+      "ok": true,
+      "status": "needs_approval",
+      "failures": [],
+      "citation_ids": [
+        "program-brief:1",
+        "equipment-and-budget:1",
+        "staff-capacity:1"
+      ]
+    },
+    {
+      "id": "enterprise-intake-write",
+      "ok": true,
+      "status": "needs_approval",
+      "failures": [],
+      "citation_ids": [
+        "intake-policy:1",
+        "pii-and-audit:1"
+      ]
+    }
+  ]
+}
