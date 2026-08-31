@@ -20,17 +20,14 @@ flowchart LR
 5. Prepend a log entry. Move today’s gate to done or leave it if blocked.
 6. Write **Tomorrow** as one line.
 
-## Today — 2026-08-29
+## Today — 2026-08-31
 
-- [x] Scaffold four-repo FDE roadmaps
-- [x] Add spine diagram, marks, and this daily file
-- [x] Push `agentic-ops` `main` — https://github.com/moisestech/agentic-ops
-- [x] Push overlay branches `docs/fde-roadmap`
+- [x] Recruiter README: what the app does, console screenshots, readable roadmap diagrams
 - Next engineering gate: **OPS-05** hybrid retrieval
 
 ## Tomorrow
 
-Open this repo and say **continue**. Start OPS-05 (pgvector hybrid retrieval).
+Start **OPS-05** (Postgres checkpointer + pgvector hybrid retrieval).
 
 ## Board
 
@@ -45,6 +42,11 @@ Open this repo and say **continue**. Start OPS-05 (pgvector hybrid retrieval).
 | Provenance M1 fixtures | comfyui-output-provenance | queued |
 
 ## Log
+
+### 2026-08-31
+
+- README leads with product behavior, three briefs, console screenshots, and done/next/later roadmap SVGs.
+- Workflow mermaid now includes the tools node.
 
 ### 2026-08-29
 
@@ -62,3 +64,6 @@ Open this repo and say **continue**. Start OPS-05 (pgvector hybrid retrieval).
 | [`assets/fde-spine-hero.png`](assets/fde-spine-hero.png) | Same, after a real status change |
 | [`assets/ops-mark.svg`](assets/ops-mark.svg) | Runtime metaphor changes |
 | Console **Replay sample workflow** | Demo fixture or approval path changes |
+| [`assets/what-the-app-does.svg`](assets/what-the-app-does.svg) | Runtime steps change |
+| [`assets/roadmap-bands.svg`](assets/roadmap-bands.svg) | Done / next / later changes |
+| [`assets/screenshots/`](assets/screenshots/) | Console UX changes |

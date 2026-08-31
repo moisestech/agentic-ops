@@ -59,7 +59,7 @@ Skip everywhere: fine-tuning / LoRA, travel planners, voice ecommerce, triple-cl
 
 ## Recruiter send
 
-1. This README + **Replay sample workflow**
+1. This README (what the app does + console screenshots)
 2. [`docs/engagement/`](engagement/) if they ask how you would install it
 3. [`docs/cases/`](cases/) before a decomposition screen
 4. The matching overlay repo for the lane (pipeline / field kit / provenance)
