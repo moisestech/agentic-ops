@@ -67,6 +67,30 @@ class Approval(BaseModel):
     decided_at: datetime | None = None
 
 
+class InternalTask(BaseModel):
+    id: str
+    originating_run_id: str
+    title: str
+    body: str
+    status: Literal["open"] = "open"
+    risk: Literal["low", "medium", "high"] = "medium"
+    org_slug: str
+    citation_ids: list[str] = Field(default_factory=list)
+    reviewer_decision: Literal["approved", "edited"]
+    reviewer_note: str | None = None
+    created_at: datetime
+    idempotency_key: str
+
+
+class AuditEvent(BaseModel):
+    run_id: str
+    seq: int
+    at: datetime
+    kind: str
+    detail: str
+    data: dict[str, Any] = Field(default_factory=dict)
+
+
 class TraceEvent(BaseModel):
     at: datetime
     node: str
@@ -102,5 +126,9 @@ class RunRecord(BaseModel):
     token_usage: dict[str, int] = Field(default_factory=dict)
     estimated_cost_usd: float = 0.0
     tool_calls: list[ToolCall] = Field(default_factory=list)
+    passages: list[dict[str, Any]] = Field(default_factory=list)
+    internal_task_id: str | None = None
+    internal_task: InternalTask | None = None
+    audit_events: list[AuditEvent] = Field(default_factory=list)
     created_at: datetime
     updated_at: datetime

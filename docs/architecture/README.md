@@ -25,6 +25,14 @@ flowchart LR
 
 Infra24 is the production comparison, not a file to copy into this repo.
 
+<p align="center">
+  <img src="../assets/state-vs-retrieval.svg" alt="Postgres holds run state; files are keyword retrieval; staff PII is not sent to the model" width="920" />
+</p>
+
+<p align="center">
+  <img src="../assets/duty-split.svg" alt="Code runs every stage; the model drafts; a person decides only at Pause" width="920" />
+</p>
+
 ## Product workflow
 
 ```mermaid
@@ -48,7 +56,8 @@ flowchart TD
 `queued → retrieving → drafting → evaluating → needs_approval | answered → executed | rejected | failed`
 
 Invalid transitions fail. A process restart must not lose a pending approval
-once Postgres checkpointer lands (in-memory checkpointer for v0 tests).
+when `AGENT_PERSISTENCE=postgres`. Unit tests and `make eval-offline` keep the
+in-memory store and MemorySaver.
 
 ## Deterministic vs model-driven
 

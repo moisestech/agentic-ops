@@ -10,7 +10,7 @@ make agent-dev
 ```
 
 In another terminal: `cd apps/web && npm install && npm run dev`.  
-Open `http://localhost:3000/console` → **Replay sample workflow**.
+Open `http://localhost:3000/console` → **Program Launch** → **Run this brief**.
 
 Or: `curl -s -X POST http://localhost:8080/v1/demo/replay | python3 -m json.tool`
 
@@ -30,4 +30,4 @@ Ask a program-launch or intake brief. Approve or reject the draft. Writes stay i
 
 ## Rollback
 
-There is no external side effect in v0. Delete the in-memory run store by restarting the agent.
+There is no external side effect in v0. Approved writes file one internal task. Memory mode drops runs on restart; Postgres mode (`make agent-persist`) does not.

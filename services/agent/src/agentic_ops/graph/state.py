@@ -6,6 +6,7 @@ from agentic_ops.models import Approval, Citation, Evaluation, ProposedAction
 
 
 class AgentState(TypedDict, total=False):
+    run_id: str
     question: str
     org_slug: str
     require_action: bool
@@ -19,3 +20,4 @@ class AgentState(TypedDict, total=False):
     token_usage: dict[str, int]
     tool_calls: list[dict[str, Any]]
     trace: list[dict[str, Any]]
+    internal_task_id: str | None

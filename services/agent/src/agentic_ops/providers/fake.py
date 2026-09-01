@@ -107,8 +107,10 @@ def _action_for(org_slug: str, question: str) -> ProposedAction:
             action_type="file_program_plan",
             title="File six-week program plan (internal record)",
             draft=(
-                "Cited program brief, calendar constraints, and budget check. "
-                "This draft stays internal until a human approves it."
+                "File the six-week creative technology program plan for staff: "
+                "Saturday 10:00–13:00 window, week-3 instructor A blocked, "
+                "budget at or under the $4,800 cap, no second venue without a new hire. "
+                "This stays an internal task until a reviewer approves it. Nothing is emailed."
             ),
             risk="medium",
             destination="internal_record",

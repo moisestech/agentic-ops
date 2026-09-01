@@ -6,7 +6,7 @@ from typing import Any
 
 from langgraph.types import Command
 
-from agentic_ops.graph import build_graph
+from agentic_ops.graph import compiled_graph, reset_graph
 from agentic_ops.models import (
     Approval,
     Citation,
@@ -17,16 +17,16 @@ from agentic_ops.models import (
     ToolCall,
     TraceEvent,
 )
-from agentic_ops.store import store
+from agentic_ops.store import get_store, reset_store
 
-_graph = None
+
+def reset_runtime() -> None:
+    reset_graph()
+    reset_store()
 
 
 def graph():
-    global _graph
-    if _graph is None:
-        _graph = build_graph()
-    return _graph
+    return compiled_graph()
 
 
 def _config(run_id: str) -> dict[str, Any]:
@@ -68,7 +68,8 @@ def _apply_state(record: RunRecord, values: dict[str, Any], *, interrupted: bool
 
     citations = [_as_model(Citation, item) for item in values.get("citations") or []]
     tool_calls = [_as_model(ToolCall, item) for item in values.get("tool_calls") or []]
-    return store.update(
+    store = get_store()
+    updated = store.update(
         record.id,
         status=status,
         answer=values.get("answer"),
@@ -81,15 +82,21 @@ def _apply_state(record: RunRecord, values: dict[str, Any], *, interrupted: bool
         token_usage=values.get("token_usage") or {},
         estimated_cost_usd=0.0,
         tool_calls=tool_calls,
+        passages=values.get("passages") or [],
+        internal_task_id=values.get("internal_task_id"),
     )
+    store.append_audit(record.id, "status", status, {"outcome": outcome})
+    return updated
 
 
 def run_to_interrupt_or_end(record: RunRecord, *, require_action: bool = False) -> RunRecord:
     started = time.perf_counter()
+    store = get_store()
     store.set_status(record.id, "retrieving")
     try:
         result = graph().invoke(
             {
+                "run_id": record.id,
                 "question": record.question,
                 "org_slug": record.org_slug,
                 "require_action": require_action,
@@ -104,6 +111,12 @@ def run_to_interrupt_or_end(record: RunRecord, *, require_action: bool = False) 
         return store.update(record.id, latency_ms=latency_ms, status=updated.status)
     except Exception as exc:
         latency_ms = int((time.perf_counter() - started) * 1000)
+        store.append_audit(
+            record.id,
+            "error",
+            "error_contained",
+            {"error": exc.__class__.__name__},
+        )
         return store.update(
             record.id,
             status="failed",
@@ -131,6 +144,7 @@ def resume_with_decision(record: RunRecord, decision: DecisionRequest) -> RunRec
         decided_at=datetime.now(UTC),
     )
     started = time.perf_counter()
+    store = get_store()
     try:
         result = graph().invoke(
             Command(resume=approval.model_dump(mode="json")),
@@ -147,6 +161,12 @@ def resume_with_decision(record: RunRecord, decision: DecisionRequest) -> RunRec
             status=updated.status,
         )
     except Exception as exc:
+        store.append_audit(
+            record.id,
+            "error",
+            "resume_error_contained",
+            {"error": exc.__class__.__name__},
+        )
         return store.update(
             record.id,
             status="failed",

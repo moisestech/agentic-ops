@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 176" role="img" aria-label="Agentic Ops stage marks and lecture glyphs">
+  <title>Agentic Ops icons</title>
+  <rect width="480" height="176" fill="#F4EFE6"/>
+  <defs>
+    <g id="icon-brief" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M7 4 H14 L19 9 V20 H7 Z"/>
+      <path d="M14 4 V9 H19"/>
+    </g>
+    <g id="icon-retrieve" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 6 H15 M5 11 H15 M5 16 H11"/>
+      <path d="M14 14 L16 16.5 L20 12"/>
+    </g>
+    <g id="icon-tools" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="4" y="4" width="16" height="16"/>
+      <path d="M9 15 L14 10"/>
+      <circle cx="15.5" cy="8.5" r="2"/>
+    </g>
+    <g id="icon-draft" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <path d="M6 8 V7 C6 5 8 5 8 7 V10"/>
+      <path d="M11 8 V7 C11 5 13 5 13 7 V10"/>
+      <path d="M5 16 H19"/>
+    </g>
+    <g id="icon-evaluate" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 6 V18"/>
+      <path d="M5 9 H19"/>
+      <path d="M6 9 V13 H10 V9"/>
+      <path d="M14 9 V12 H18 V9"/>
+    </g>
+    <g id="icon-pause">
+      <rect x="5" y="10" width="14" height="4" fill="#9A3412" stroke="#1C1916" stroke-width="1.75"/>
+    </g>
+    <g id="icon-record" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <rect x="4" y="5" width="16" height="5" fill="#B6E2BA" stroke="#1C1916" stroke-width="1.75"/>
+      <path d="M4 14 H20 M4 19 H16"/>
+    </g>
+    <g id="icon-read" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round">
+      <path d="M4 12 C7 7 17 7 20 12 C17 17 7 17 4 12 Z"/>
+      <circle cx="12" cy="12" r="2.2"/>
+    </g>
+    <g id="icon-write" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round">
+      <rect x="7" y="11" width="10" height="8"/>
+      <path d="M9 11 V9 A3 3 0 0 1 15 9 V11"/>
+    </g>
+    <g id="icon-state" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <ellipse cx="12" cy="7" rx="7" ry="3"/>
+      <path d="M5 7 V17 C5 19 19 19 19 17 V7"/>
+    </g>
+    <g id="icon-human" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <circle cx="12" cy="8" r="3.2"/>
+      <path d="M5 20 C5 14 19 14 19 20"/>
+    </g>
+    <g id="icon-model" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <path d="M4 12 H20"/>
+      <circle cx="12" cy="12" r="3.2" fill="#F4EFE6"/>
+    </g>
+  </defs>
+
+  <g font-family="ui-monospace, Menlo, monospace" font-size="9" fill="#6B645B" text-anchor="middle">
+    <g transform="translate(8,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-brief" x="24" y="16"/>
+      <text x="36" y="64">brief</text>
+    </g>
+    <g transform="translate(88,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-retrieve" x="24" y="16"/>
+      <text x="36" y="64">retrieve</text>
+    </g>
+    <g transform="translate(168,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-tools" x="24" y="16"/>
+      <text x="36" y="64">tools</text>
+    </g>
+    <g transform="translate(248,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-draft" x="24" y="16"/>
+      <text x="36" y="64">draft</text>
+    </g>
+    <g transform="translate(328,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-evaluate" x="24" y="16"/>
+      <text x="36" y="64">evaluate</text>
+    </g>
+    <g transform="translate(408,8)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-pause" x="24" y="16"/>
+      <text x="36" y="64">pause</text>
+    </g>
+    <g transform="translate(8,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-record" x="24" y="16"/>
+      <text x="36" y="64">record</text>
+    </g>
+    <g transform="translate(88,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-read" x="24" y="16"/>
+      <text x="36" y="64">read</text>
+    </g>
+    <g transform="translate(168,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-write" x="24" y="16"/>
+      <text x="36" y="64">write</text>
+    </g>
+    <g transform="translate(248,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-state" x="24" y="16"/>
+      <text x="36" y="64">state</text>
+    </g>
+    <g transform="translate(328,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-human" x="24" y="16"/>
+      <text x="36" y="64">human</text>
+    </g>
+    <g transform="translate(408,96)">
+      <rect width="72" height="72" fill="#FFFDF8" stroke="#D9D1C5"/>
+      <use href="#icon-model" x="24" y="16"/>
+      <text x="36" y="64">model</text>
+    </g>
+  </g>
+</svg>

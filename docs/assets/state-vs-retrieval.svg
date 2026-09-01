@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="Workflow state in Postgres, keyword files for retrieval, and what is not sent to the model">
+  <title>State versus retrieval</title>
+  <rect width="960" height="400" fill="#F4EFE6"/>
+  <defs>
+    <g id="icon-state" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <ellipse cx="12" cy="7" rx="7" ry="3"/><path d="M5 7 V17 C5 19 19 19 19 17 V7"/>
+    </g>
+    <g id="icon-retrieve" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 6 H15 M5 11 H15 M5 16 H11"/><path d="M14 14 L16 16.5 L20 12"/>
+    </g>
+    <g id="icon-write" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round">
+      <rect x="7" y="11" width="10" height="8"/><path d="M9 11 V9 A3 3 0 0 1 15 9 V11"/>
+    </g>
+  </defs>
+  <text x="32" y="36" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="2">MEMORY IS NOT STATE. DO NOT DUMP A VECTOR CLOUD HERE.</text>
+
+  <g font-family="Georgia, serif" font-size="13" fill="#1C1916">
+    <g transform="translate(32,64)">
+      <rect width="288" height="268" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-state" x="20" y="16"/>
+      <text x="56" y="36" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#6B645B">POSTGRES</text>
+      <text x="20" y="72" font-size="16">Workflow state</text>
+      <text x="20" y="104" fill="#6B645B">run</text>
+      <text x="20" y="128" fill="#6B645B">checkpoint</text>
+      <text x="20" y="152" fill="#6B645B">decision</text>
+      <text x="20" y="176" fill="#6B645B">internal task</text>
+      <text x="20" y="200" fill="#6B645B">audit events</text>
+      <text x="20" y="240" font-size="12" fill="#6B645B">Survives an agent restart.</text>
+    </g>
+    <g transform="translate(336,64)">
+      <rect width="288" height="268" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-retrieve" x="20" y="16"/>
+      <text x="56" y="36" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#6B645B">FILES</text>
+      <text x="20" y="72" font-size="16">Keyword corpus</text>
+      <text x="20" y="104" fill="#6B645B">approved passages</text>
+      <text x="20" y="128" fill="#6B645B">source ids</text>
+      <text x="20" y="152" fill="#6B645B">citation allowlist</text>
+      <text x="20" y="176" fill="#6B645B">hybrid is later</text>
+      <text x="20" y="240" font-size="12" fill="#6B645B">Smallest useful context.</text>
+    </g>
+    <g transform="translate(640,64)">
+      <rect width="288" height="268" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-write" x="20" y="16"/>
+      <text x="56" y="36" font-family="ui-monospace, Menlo, monospace" font-size="12" fill="#6B645B">NOT SENT</text>
+      <text x="20" y="72" font-size="16">Kept off the model</text>
+      <text x="20" y="104" fill="#6B645B">staff PII dump</text>
+      <text x="20" y="128" fill="#6B645B">full conversation log</text>
+      <text x="20" y="152" fill="#6B645B">untrusted instructions</text>
+      <text x="20" y="176" fill="#6B645B">a second venue by default</text>
+      <text x="20" y="240" font-size="12" fill="#6B645B">Retrieved text is data, not orders.</text>
+    </g>
+  </g>
+  <text x="32" y="372" fill="#6B645B" font-family="Georgia, serif" font-size="13">Smallest useful context. Restart keeps the pause.</text>
+</svg>

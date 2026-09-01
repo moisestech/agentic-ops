@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from functools import lru_cache
-
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph
 
+from agentic_ops.config import settings
 from agentic_ops.graph.nodes import (
     await_approval_node,
     draft_node,
@@ -17,9 +16,37 @@ from agentic_ops.graph.nodes import (
 )
 from agentic_ops.graph.state import AgentState
 
+_graph = None
+_pool = None
 
-@lru_cache(maxsize=1)
-def build_graph():
+
+def reset_graph() -> None:
+    global _graph, _pool
+    _graph = None
+    if _pool is not None:
+        _pool.close()
+        _pool = None
+
+
+def _postgres_checkpointer():
+    global _pool
+    from langgraph.checkpoint.postgres import PostgresSaver
+    from psycopg_pool import ConnectionPool
+
+    if _pool is None:
+        _pool = ConnectionPool(
+            conninfo=settings.database_url,
+            min_size=1,
+            max_size=8,
+            open=True,
+            kwargs={"autocommit": True, "prepare_threshold": 0},
+        )
+    saver = PostgresSaver(conn=_pool)
+    saver.setup()
+    return saver
+
+
+def build_graph(checkpointer=None):
     graph = StateGraph(AgentState)
     graph.add_node("retrieve", retrieve_node)
     graph.add_node("tools", tools_node)
@@ -40,4 +67,14 @@ def build_graph():
     graph.add_edge("await_approval", "execute")
     graph.add_edge("respond", END)
     graph.add_edge("execute", END)
-    return graph.compile(checkpointer=MemorySaver())
+    saver = checkpointer
+    if saver is None:
+        saver = _postgres_checkpointer() if settings.use_postgres else MemorySaver()
+    return graph.compile(checkpointer=saver)
+
+
+def compiled_graph():
+    global _graph
+    if _graph is None:
+        _graph = build_graph()
+    return _graph

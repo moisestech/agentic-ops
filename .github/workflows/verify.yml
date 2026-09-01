@@ -13,6 +13,22 @@ jobs:
   agent:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: ops
+          POSTGRES_PASSWORD: ops
+          POSTGRES_DB: ops
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ops -d ops"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://ops:ops@localhost:5432/ops
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,7 +41,12 @@ jobs:
       - name: Ruff
         run: .venv/bin/ruff check services/agent
       - name: Tests
-        run: .venv/bin/pytest -q
+        run: .venv/bin/pytest -q -m "not persistence"
+        working-directory: services/agent
+      - name: Persistence tests
+        env:
+          AGENT_PERSISTENCE: postgres
+        run: .venv/bin/pytest -q -m persistence
         working-directory: services/agent
       - name: Offline eval
         run: .venv/bin/python -m agentic_ops.evals.harness --provider fake

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Agentic Ops mark: retrieve, tool, pause, record">
+  <title>Agentic Ops</title>
+  <rect width="96" height="96" fill="#F0EEE5"/>
+  <circle cx="48" cy="22" r="6" fill="#86D7E2" stroke="#10110F" stroke-width="1.75"/>
+  <circle cx="74" cy="48" r="6" fill="none" stroke="#10110F" stroke-width="1.75"/>
+  <circle cx="48" cy="74" r="6" fill="#B6E2BA" stroke="#10110F" stroke-width="1.75"/>
+  <circle cx="22" cy="48" r="6" fill="none" stroke="#10110F" stroke-width="1.75"/>
+  <path d="M48 28 V42 M54 48 H68 M48 54 V68 M42 48 H28" fill="none" stroke="#10110F" stroke-width="1.75"/>
+  <rect x="44" y="46" width="8" height="4" fill="#10110F"/>
+</svg>

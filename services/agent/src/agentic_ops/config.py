@@ -9,8 +9,13 @@ class Settings(BaseSettings):
     agent_provider: str = "fake"
     agent_cors_origins: str = "http://localhost:3000"
     database_url: str = "postgresql://ops:ops@localhost:5433/ops"
+    agent_persistence: str = "memory"
     corpus_dir: str = ""
     demo_mode: bool = False
+
+    @property
+    def use_postgres(self) -> bool:
+        return self.agent_persistence.strip().lower() == "postgres"
 
     @property
     def cors_origin_list(self) -> list[str]:

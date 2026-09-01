@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" role="img" aria-label="Seven stages: brief, retrieve, tools, draft, evaluate, pause, record">
+  <title>What Agentic Ops does</title>
+  <rect width="960" height="300" fill="#F4EFE6"/>
+  <defs>
+    <g id="icon-brief" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M7 4 H14 L19 9 V20 H7 Z"/><path d="M14 4 V9 H19"/>
+    </g>
+    <g id="icon-retrieve" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 6 H15 M5 11 H15 M5 16 H11"/><path d="M14 14 L16 16.5 L20 12"/>
+    </g>
+    <g id="icon-tools" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="4" y="4" width="16" height="16"/><path d="M9 15 L14 10"/><circle cx="15.5" cy="8.5" r="2"/>
+    </g>
+    <g id="icon-draft" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <path d="M6 8 V7 C6 5 8 5 8 7 V10"/><path d="M11 8 V7 C11 5 13 5 13 7 V10"/><path d="M5 16 H19"/>
+    </g>
+    <g id="icon-evaluate" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 6 V18"/><path d="M5 9 H19"/><path d="M6 9 V13 H10 V9"/><path d="M14 9 V12 H18 V9"/>
+    </g>
+    <g id="icon-pause">
+      <rect x="5" y="10" width="14" height="4" fill="#9A3412" stroke="#1C1916" stroke-width="1.75"/>
+    </g>
+    <g id="icon-record" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <rect x="4" y="5" width="16" height="5" fill="#B6E2BA" stroke="#1C1916" stroke-width="1.75"/><path d="M4 14 H20 M4 19 H16"/>
+    </g>
+  </defs>
+  <text x="32" y="36" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="2">WHAT THIS APP DOES</text>
+  <path d="M48 150 H912" fill="none" stroke="#1C1916" stroke-width="1.5"/>
+  <g font-family="Georgia, serif" font-size="12" fill="#1C1916" text-anchor="middle">
+    <g transform="translate(24,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-brief" x="48" y="14"/>
+      <text x="60" y="58">01 Brief</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">question or</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">program launch</text>
+    </g>
+    <g transform="translate(156,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-retrieve" x="48" y="14"/>
+      <text x="60" y="58">02 Retrieve</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">keyword on</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">approved files</text>
+    </g>
+    <g transform="translate(288,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-tools" x="48" y="14"/>
+      <text x="60" y="58">03 Tools</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">calendar / budget</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">writes stay locked</text>
+    </g>
+    <g transform="translate(420,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-draft" x="48" y="14"/>
+      <text x="60" y="58">04 Draft</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">grounded draft</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">or honest abstain</text>
+    </g>
+    <g transform="translate(552,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-evaluate" x="48" y="14"/>
+      <text x="60" y="58">05 Evaluate</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">grounded / policy</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">needs a human?</text>
+    </g>
+    <g transform="translate(684,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#9A3412"/>
+      <use href="#icon-pause" x="48" y="14"/>
+      <text x="60" y="58">06 Pause</text>
+      <text x="60" y="80" font-size="11" fill="#6B645B">approve / edit</text>
+      <text x="60" y="96" font-size="11" fill="#6B645B">or reject</text>
+    </g>
+    <g transform="translate(816,78)">
+      <rect width="120" height="144" fill="#FFFDF8" stroke="#1C1916"/>
+      <use href="#icon-record" x="48" y="14"/>
+      <text x="60" y="58">07 Record</text>
+      <text x="60" y="80" font-size="11" fill="#3F6212">one internal task</text>
+      <text x="60" y="96" font-size="11" fill="#3F6212">nothing emailed</text>
+    </g>
+  </g>
+  <text x="32" y="280" fill="#6B645B" font-family="Georgia, serif" font-size="13">Keyword overlap on approved files. Hybrid is later.</text>
+</svg>

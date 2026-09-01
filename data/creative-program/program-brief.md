@@ -1,6 +1,6 @@
 # Six-week creative technology program
 
-The program runs six weeks, Saturday mornings, with a published intake path and an exit ticket.
+The program runs six weeks, Saturday mornings 10:00–13:00, with a published intake path and an exit ticket.
 It is a creative technology lab for artists and cultural staff, not a generic coding bootcamp.
 
 ## Scope

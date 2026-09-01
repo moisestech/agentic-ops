@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 200" role="img" aria-label="FDE portfolio spine: four repos, one packet">
+  <title>FDE portfolio spine</title>
+  <rect width="720" height="200" fill="#F0EEE5"/>
+  <text x="24" y="28" fill="#10110F" font-family="Georgia, serif" font-size="13" letter-spacing="1.4">FDE PORTFOLIO SPINE</text>
+  <path d="M90 100 H630" fill="none" stroke="#10110F" stroke-width="1.5"/>
+  <g transform="translate(50,58)">
+    <rect width="88" height="84" fill="#FFFDF8" stroke="#10110F" stroke-width="1.5"/>
+    <circle cx="44" cy="28" r="6" fill="#86D7E2" stroke="#10110F"/>
+    <circle cx="44" cy="52" r="6" fill="#B6E2BA" stroke="#10110F"/>
+    <path d="M44 34 V46" stroke="#10110F"/>
+    <text x="44" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="9">AGENTIC OPS</text>
+  </g>
+  <g transform="translate(228,58)">
+    <rect width="88" height="84" fill="#FFFDF8" stroke="#10110F" stroke-width="1.5"/>
+    <path d="M28 22 H20 V62 H28" fill="none" stroke="#10110F" stroke-width="2"/>
+    <path d="M60 22 H68 V62 H60" fill="none" stroke="#10110F" stroke-width="2"/>
+    <circle cx="36" cy="36" r="4" fill="#86D7E2" stroke="#10110F"/>
+    <circle cx="52" cy="48" r="4" fill="#B6E2BA" stroke="#10110F"/>
+    <text x="44" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="9">EVIDENCE</text>
+  </g>
+  <g transform="translate(406,58)">
+    <rect width="88" height="84" fill="#FFFDF8" stroke="#10110F" stroke-width="1.5"/>
+    <rect x="22" y="20" width="44" height="18" fill="none" stroke="#9A3412" stroke-width="1.5"/>
+    <rect x="28" y="42" width="32" height="18" fill="#F0EEE5" stroke="#10110F"/>
+    <text x="44" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="9">FIELD KIT</text>
+  </g>
+  <g transform="translate(584,58)">
+    <rect width="88" height="84" fill="#FFFDF8" stroke="#10110F" stroke-width="1.5"/>
+    <circle cx="30" cy="32" r="4" fill="#C4A35A" stroke="#10110F"/>
+    <circle cx="50" cy="40" r="4" fill="none" stroke="#10110F"/>
+    <circle cx="58" cy="56" r="5" fill="#C4A35A" stroke="#10110F"/>
+    <path d="M34 34 L46 38 L54 52" fill="none" stroke="#10110F"/>
+    <text x="44" y="76" text-anchor="middle" font-family="Georgia, serif" font-size="9">PROVENANCE</text>
+  </g>
+</svg>

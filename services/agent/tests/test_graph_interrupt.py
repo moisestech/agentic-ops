@@ -39,6 +39,9 @@ def test_interrupt_then_approve_executes_internal_record_only() -> None:
     assert body["status"] == "executed"
     assert body["outcome"] == "executed"
     assert body["approval"]["decision"] == "approved"
+    assert body["internal_task"]
+    assert body["internal_task"]["originating_run_id"] == run["id"]
+    assert body["internal_task"]["status"] == "open"
 
 
 def test_reject_does_not_execute() -> None:

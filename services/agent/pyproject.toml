@@ -19,6 +19,8 @@ dependencies = [
   "pydantic>=2.9.0",
   "pydantic-settings>=2.6.0",
   "httpx>=0.27.0",
+  "psycopg[binary,pool]>=3.2.0",
+  "langgraph-checkpoint-postgres>=2.0.0",
 ]
 
 [project.optional-dependencies]
@@ -44,6 +46,9 @@ where = ["src"]
 asyncio_mode = "auto"
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = [
+  "persistence: requires Postgres (DATABASE_URL + AGENT_PERSISTENCE=postgres)",
+]
 
 [tool.ruff]
 line-length = 100

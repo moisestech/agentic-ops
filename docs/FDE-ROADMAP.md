@@ -39,9 +39,9 @@ Skip everywhere: fine-tuning / LoRA, travel planners, voice ecommerce, triple-cl
 | W1 ReAct / tools | **done** | LangGraph nodes + four-tool catalog |
 | W2–3 RAG + groundedness | **done (keyword)** | `search_documents`, citation gate, golden set |
 | W4 multi-agent | **not started** | Optional planner → executor → critic *inside this graph only* |
-| W5 HITL UX | **partial** | Approval interrupt exists; streaming UI is OPS-07 |
+| W5 HITL UX | **done (interrupt)** | Durable pause/resume + console; streaming UI is OPS-07 |
 | W6 MCP | **done (shaped)** | `python -m agentic_ops.mcp`, `GET /v1/tools` |
-| W7 hybrid search | **pending** | OPS-05 pgvector + RRF; do not start a search-demo repo |
+| W7 hybrid search | **pending** | OPS-05B pgvector + RRF; do not start a search-demo repo |
 | W8 evals, safety, cost | **partial** | Offline harness green; cost CI budget is OPS-08 |
 | W9 fine-tune | **out of scope** | Honest gap |
 | W10–11 capstone | **this repo** | Institution-launch + enterprise-intake scenarios |
@@ -50,7 +50,7 @@ Skip everywhere: fine-tuning / LoRA, travel planners, voice ecommerce, triple-cl
 
 ## Next tasks (do these here)
 
-1. **OPS-05** — Postgres checkpointer + pgvector hybrid retrieval. Verification: integration tests with Compose.
+1. **OPS-05B** — pgvector hybrid retrieval + RRF. Keyword stays the deterministic fallback. Do not start a search-demo repo.
 2. **OPS-08** — Trace aggregation + token/cost threshold that fails CI. Verification: a red fixture that trips the budget gate.
 3. **OPS-07** — Stream tool-state into the console so a recruiter can watch retrieve → tools → pause.
 4. **OPS-06** — Opt-in OpenAI/Claude parity behind the same graph contract. Fake stays default.
@@ -59,7 +59,7 @@ Skip everywhere: fine-tuning / LoRA, travel planners, voice ecommerce, triple-cl
 
 ## Recruiter send
 
-1. This README (what the app does + console screenshots)
+1. This README (what the app does + console screenshots) and [`docs/WALKTHROUGH.md`](WALKTHROUGH.md)
 2. [`docs/engagement/`](engagement/) if they ask how you would install it
 3. [`docs/cases/`](cases/) before a decomposition screen
 4. The matching overlay repo for the lane (pipeline / field kit / provenance)

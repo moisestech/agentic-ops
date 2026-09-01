@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 360" role="img" aria-label="Chat wrapper versus a seven-stage governed loop">
+  <title>Chat wrapper vs governed loop</title>
+  <rect width="960" height="360" fill="#F4EFE6"/>
+  <defs>
+    <g id="icon-brief" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M7 4 H14 L19 9 V20 H7 Z"/><path d="M14 4 V9 H19"/>
+    </g>
+    <g id="icon-retrieve" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 6 H15 M5 11 H15 M5 16 H11"/><path d="M14 14 L16 16.5 L20 12"/>
+    </g>
+    <g id="icon-tools" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="4" y="4" width="16" height="16"/><path d="M9 15 L14 10"/><circle cx="15.5" cy="8.5" r="2"/>
+    </g>
+    <g id="icon-draft" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <path d="M6 8 V7 C6 5 8 5 8 7 V10"/><path d="M11 8 V7 C11 5 13 5 13 7 V10"/><path d="M5 16 H19"/>
+    </g>
+    <g id="icon-evaluate" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 6 V18"/><path d="M5 9 H19"/><path d="M6 9 V13 H10 V9"/><path d="M14 9 V12 H18 V9"/>
+    </g>
+    <g id="icon-pause">
+      <rect x="5" y="10" width="14" height="4" fill="#9A3412" stroke="#1C1916" stroke-width="1.75"/>
+    </g>
+    <g id="icon-record" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <rect x="4" y="5" width="16" height="5" fill="#B6E2BA" stroke="#1C1916" stroke-width="1.75"/><path d="M4 14 H20 M4 19 H16"/>
+    </g>
+    <g id="icon-human" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <circle cx="12" cy="8" r="3.2"/><path d="M5 20 C5 14 19 14 19 20"/>
+    </g>
+    <g id="icon-model" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <path d="M4 12 H20"/><circle cx="12" cy="12" r="3.2" fill="#F4EFE6"/>
+    </g>
+  </defs>
+  <text x="32" y="36" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="2">CHAT WRAPPER VS GOVERNED LOOP</text>
+
+  <rect x="32" y="56" width="424" height="248" fill="#FFFDF8" stroke="#1C1916"/>
+  <text x="244" y="84" text-anchor="middle" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1.5">CHAT WRAPPER</text>
+  <g font-family="Georgia, serif" font-size="13" fill="#1C1916" text-anchor="middle">
+    <g transform="translate(86,118)">
+      <rect width="88" height="72" fill="#F4EFE6" stroke="#1C1916"/>
+      <text x="44" y="42">Prompt</text>
+    </g>
+    <g transform="translate(200,118)">
+      <rect width="88" height="72" fill="#F4EFE6" stroke="#1C1916"/>
+      <use href="#icon-model" x="32" y="10"/>
+      <text x="44" y="56">Model</text>
+    </g>
+    <g transform="translate(314,118)">
+      <rect width="88" height="72" fill="#F4EFE6" stroke="#1C1916"/>
+      <text x="44" y="42">Prose</text>
+    </g>
+  </g>
+  <path d="M174 154 H200 M288 154 H314" fill="none" stroke="#1C1916" stroke-width="1.5"/>
+  <text x="244" y="268" text-anchor="middle" fill="#6B645B" font-family="Georgia, serif" font-size="12">No inspectable state. No permission model.</text>
+
+  <rect x="504" y="56" width="424" height="248" fill="#FFFDF8" stroke="#1C1916"/>
+  <text x="716" y="84" text-anchor="middle" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1.5">GOVERNED LOOP</text>
+  <path d="M540 168 H892" fill="none" stroke="#1C1916" stroke-width="1.5"/>
+  <g font-family="ui-monospace, Menlo, monospace" font-size="8" fill="#6B645B" text-anchor="middle">
+    <g transform="translate(532,140)"><use href="#icon-brief"/><text x="12" y="52">brief</text></g>
+    <g transform="translate(584,140)"><use href="#icon-retrieve"/><text x="12" y="52">retrieve</text></g>
+    <g transform="translate(636,140)"><use href="#icon-tools"/><text x="12" y="52">tools</text></g>
+    <g transform="translate(688,140)"><use href="#icon-draft"/><text x="12" y="52">draft</text></g>
+    <g transform="translate(740,140)"><use href="#icon-evaluate"/><text x="12" y="52">evaluate</text></g>
+    <g transform="translate(792,132)"><use href="#icon-pause"/><use href="#icon-human" x="0" y="-28"/><text x="12" y="60">pause</text></g>
+    <g transform="translate(844,140)"><use href="#icon-record"/><text x="12" y="52">record</text></g>
+  </g>
+  <text x="716" y="268" text-anchor="middle" fill="#6B645B" font-family="Georgia, serif" font-size="12">A person sits on the write. Nothing is emailed.</text>
+
+  <text x="32" y="336" fill="#6B645B" font-family="Georgia, serif" font-size="13">An agentic system is production software, not an LLM in a chat box.</text>
+</svg>

@@ -10,7 +10,8 @@ repo only.
 | OPS-02 | done | Keyword retrieval + LangChain chunking + public corpus | retrieval tests |
 | OPS-03 | done | LangGraph interrupt/resume + citation/policy gate | graph tests |
 | OPS-04 | done | Next.js console for ask / approve / audit | `apps/web` |
-| OPS-05 | pending | Postgres checkpointer + pgvector hybrid retrieval | integration tests |
+| OPS-05A | done | Durable runs, Postgres checkpointer, internal task ledger | `make verify-recruiter` |
+| OPS-05B | pending | pgvector hybrid retrieval + RRF | integration tests; keyword stays fallback |
 | OPS-06 | pending | OpenAI and Claude provider parity tests | live opt-in + fake fixtures |
 | OPS-07 | pending | Vercel AI SDK streaming + tool-state rendering | console stream |
 | OPS-08 | pending | Observability: traces, tokens, cost thresholds | CI budget gate |

@@ -23,17 +23,20 @@ flowchart LR
 ## Today — 2026-08-31
 
 - [x] Recruiter README: what the app does, console screenshots, readable roadmap diagrams
-- Next engineering gate: **OPS-05** hybrid retrieval
+- [x] Homepage as an architecture + FDE dossier (not a two-card stub)
+- [x] **OPS-05A** durable runs / checkpoints / one internal task (`make verify-recruiter`)
+- Next engineering gate: **OPS-05B** hybrid retrieval + RRF (keyword stays fallback)
 
 ## Tomorrow
 
-Start **OPS-05** (Postgres checkpointer + pgvector hybrid retrieval).
+**OPS-05B** hybrid retrieval. Do not start a search-demo repo. Streaming and cost CI stay later.
 
 ## Board
 
 | Gate | Repo | Status |
 | --- | --- | --- |
-| OPS-05 pgvector hybrid | agentic-ops | next |
+| OPS-05A durable state / task ledger | agentic-ops | done |
+| OPS-05B pgvector hybrid | agentic-ops | queued |
 | OPS-08 cost CI | agentic-ops | queued |
 | OPS-07 stream tool-state | agentic-ops | queued |
 | AEP-10 traces / cost | agentic-evidence-pipeline | queued |
@@ -45,7 +48,10 @@ Start **OPS-05** (Postgres checkpointer + pgvector hybrid retrieval).
 
 ### 2026-08-31
 
+- OPS-05A: Postgres runs/decisions/internal_tasks/audit_events + LangGraph PostgresSaver. Approve or edit-and-approve files one task. Same decision retries 200; conflict 409.
+- Operator console is seven stages. Program Launch leads. Walkthrough in `docs/WALKTHROUGH.md`.
 - README leads with product behavior, three briefs, console screenshots, and done/next/later roadmap SVGs.
+- Homepage redesigned: architecture steps, tool permissions, two-stack FDE fit, honest status.
 - Workflow mermaid now includes the tools node.
 
 ### 2026-08-29
@@ -63,7 +69,12 @@ Start **OPS-05** (Postgres checkpointer + pgvector hybrid retrieval).
 | [`assets/fde-spine.svg`](assets/fde-spine.svg) | A repo is added or a lane changes |
 | [`assets/fde-spine-hero.png`](assets/fde-spine-hero.png) | Same, after a real status change |
 | [`assets/ops-mark.svg`](assets/ops-mark.svg) | Runtime metaphor changes |
-| Console **Replay sample workflow** | Demo fixture or approval path changes |
+| Console **Program Launch** player | Demo fixture or approval path changes |
 | [`assets/what-the-app-does.svg`](assets/what-the-app-does.svg) | Runtime steps change |
+| [`assets/chat-vs-loop.svg`](assets/chat-vs-loop.svg) | Chat-vs-agent thesis changes |
+| [`assets/tool-fence.svg`](assets/tool-fence.svg) | Tool catalog or WRITE rule changes |
+| [`assets/state-vs-retrieval.svg`](assets/state-vs-retrieval.svg) | Persistence or retrieval story changes |
+| [`assets/duty-split.svg`](assets/duty-split.svg) | Code / model / human split changes |
+| [`assets/ops-icons.svg`](assets/ops-icons.svg) | Stage marks change |
 | [`assets/roadmap-bands.svg`](assets/roadmap-bands.svg) | Done / next / later changes |
 | [`assets/screenshots/`](assets/screenshots/) | Console UX changes |

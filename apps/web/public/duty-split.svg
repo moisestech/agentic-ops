@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" role="img" aria-label="Who acts at each stage: deterministic code, model judgment, human decision">
+  <title>Duty split</title>
+  <rect width="960" height="400" fill="#F4EFE6"/>
+  <defs>
+    <g id="icon-brief" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M7 4 H14 L19 9 V20 H7 Z"/><path d="M14 4 V9 H19"/>
+    </g>
+    <g id="icon-retrieve" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 6 H15 M5 11 H15 M5 16 H11"/><path d="M14 14 L16 16.5 L20 12"/>
+    </g>
+    <g id="icon-tools" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <rect x="4" y="4" width="16" height="16"/><path d="M9 15 L14 10"/><circle cx="15.5" cy="8.5" r="2"/>
+    </g>
+    <g id="icon-draft" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <path d="M6 8 V7 C6 5 8 5 8 7 V10"/><path d="M11 8 V7 C11 5 13 5 13 7 V10"/><path d="M5 16 H19"/>
+    </g>
+    <g id="icon-evaluate" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M12 6 V18"/><path d="M5 9 H19"/><path d="M6 9 V13 H10 V9"/><path d="M14 9 V12 H18 V9"/>
+    </g>
+    <g id="icon-pause">
+      <rect x="5" y="10" width="14" height="4" fill="#9A3412" stroke="#1C1916" stroke-width="1.75"/>
+    </g>
+    <g id="icon-record" fill="none" stroke="#1C1916" stroke-width="1.75" stroke-linecap="round">
+      <rect x="4" y="5" width="16" height="5" fill="#B6E2BA" stroke="#1C1916" stroke-width="1.75"/><path d="M4 14 H20 M4 19 H16"/>
+    </g>
+    <g id="icon-model" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <path d="M4 12 H20"/><circle cx="12" cy="12" r="3.2" fill="#F4EFE6"/>
+    </g>
+    <g id="icon-human" fill="none" stroke="#1C1916" stroke-width="1.75">
+      <circle cx="12" cy="8" r="3.2"/><path d="M5 20 C5 14 19 14 19 20"/>
+    </g>
+  </defs>
+  <text x="32" y="36" fill="#6B645B" font-family="ui-monospace, Menlo, monospace" font-size="12" letter-spacing="2">MODEL SUGGESTS. CODE LOCKS THE WRITE. A PERSON DECIDES.</text>
+
+  <g font-family="ui-monospace, Menlo, monospace" font-size="9" fill="#6B645B" text-anchor="middle">
+    <g transform="translate(188,56)"><use href="#icon-brief" x="20"/><text x="32" y="48">brief</text></g>
+    <g transform="translate(292,56)"><use href="#icon-retrieve" x="20"/><text x="32" y="48">retrieve</text></g>
+    <g transform="translate(396,56)"><use href="#icon-tools" x="20"/><text x="32" y="48">tools</text></g>
+    <g transform="translate(500,56)"><use href="#icon-draft" x="20"/><text x="32" y="48">draft</text></g>
+    <g transform="translate(604,56)"><use href="#icon-evaluate" x="20"/><text x="32" y="48">evaluate</text></g>
+    <g transform="translate(708,56)"><use href="#icon-pause" x="20"/><text x="32" y="48">pause</text></g>
+    <g transform="translate(812,56)"><use href="#icon-record" x="20"/><text x="32" y="48">record</text></g>
+  </g>
+
+  <g font-family="Georgia, serif" font-size="13" fill="#1C1916">
+    <text x="32" y="160">Deterministic code</text>
+    <g fill="#1C1916">
+      <rect x="208" y="146" width="16" height="16"/>
+      <rect x="312" y="146" width="16" height="16"/>
+      <rect x="416" y="146" width="16" height="16"/>
+      <rect x="520" y="146" width="16" height="16"/>
+      <rect x="624" y="146" width="16" height="16"/>
+      <rect x="728" y="146" width="16" height="16"/>
+      <rect x="832" y="146" width="16" height="16"/>
+    </g>
+    <text x="32" y="224">Model judgment</text>
+    <use href="#icon-model" x="508" y="204"/>
+    <text x="200" y="224" fill="#6B645B" font-size="11">none</text>
+    <text x="304" y="224" fill="#6B645B" font-size="11">none</text>
+    <text x="408" y="224" fill="#6B645B" font-size="11">none</text>
+    <text x="608" y="224" fill="#6B645B" font-size="11">gate only</text>
+    <text x="712" y="224" fill="#6B645B" font-size="11">none</text>
+    <text x="816" y="224" fill="#6B645B" font-size="11">none</text>
+    <text x="32" y="288">Human decision</text>
+    <use href="#icon-human" x="716" y="268"/>
+    <text x="200" y="288" fill="#6B645B" font-size="11">chooses brief</text>
+    <text x="304" y="288" fill="#6B645B" font-size="11"></text>
+    <text x="408" y="288" fill="#6B645B" font-size="11"></text>
+    <text x="512" y="288" fill="#6B645B" font-size="11"></text>
+    <text x="608" y="288" fill="#6B645B" font-size="11"></text>
+    <text x="816" y="288" fill="#6B645B" font-size="11">already decided</text>
+  </g>
+  <text x="32" y="372" fill="#6B645B" font-family="Georgia, serif" font-size="13">One internal task. Append-only audit. Nothing is emailed.</text>
+</svg>

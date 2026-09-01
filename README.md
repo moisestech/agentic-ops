@@ -2,11 +2,15 @@
   <img src="docs/assets/ops-mark.svg" alt="Agentic Ops mark: retrieve, tool, pause, record" width="88" />
 </p>
 
+<p align="center">
+  <img src="docs/assets/chat-vs-loop.svg" alt="Chat wrapper versus a seven-stage governed loop with a person on Pause" width="920" />
+</p>
+
 # Agentic Ops
 
 ### Retrieve. Cite. Pause. Record.
 
-A governed agent for organizational work. Someone asks a handbook question or a program-launch brief. The runtime retrieves approved files, calls permissioned tools, cites its sources, and **stops before any write**. A person approves or rejects. The audit trail stays.
+A governed agent for organizational work. Someone asks a handbook question or a program-launch brief. The runtime retrieves approved files (**keyword retrieval today**; hybrid is OPS-05B), calls permissioned tools, cites its sources, and **stops before any write**. A person approves, edits, or rejects. An approved WRITE files **one internal task**. Pause/resume and the task ledger survive an agent restart when Postgres is on.
 
 Not a chatbot. Nothing is emailed. Public/synthetic corpus only. Fake provider is the CI default — recruiters need no API key.
 
@@ -22,7 +26,7 @@ Not a chatbot. Nothing is emailed. Public/synthetic corpus only. Fake provider i
 ![Provider](https://img.shields.io/badge/provider-fake_offline-B6E2BA)
 
 <p align="center">
-  <img src="docs/assets/what-the-app-does.svg" alt="Brief, retrieve, tools, cite, pause, record" width="920" />
+  <img src="docs/assets/what-the-app-does.svg" alt="Brief, retrieve, tools, draft, evaluate, pause, record" width="920" />
 </p>
 
 ## What this app does
@@ -42,16 +46,20 @@ Four tools, one permission model:
 | `calculate_budget` | READ | Line items vs cap |
 | `manage_actions` | WRITE | Tasks stay `pending_approval` until a human decides |
 
+<p align="center">
+  <img src="docs/assets/tool-fence.svg" alt="Three READ tools open; manage_actions WRITE locked until a human decides" width="920" />
+</p>
+
 ```mermaid
 flowchart TD
   A[Brief] --> B[Retrieve]
   B --> T[Tools]
-  T --> C[Cited draft]
-  C --> D[Grounding and policy]
+  T --> C[Draft and cite]
+  C --> D[Evaluate]
   D --> E{Write?}
   E -->|no| F[Answered]
-  E -->|yes| G[Human pause]
-  G -->|approved| H[Internal record only]
+  E -->|yes| G[Pause]
+  G -->|approved or edited| H[Internal task]
   G -->|rejected| I[Rejected]
 ```
 
@@ -59,35 +67,38 @@ flowchart TD
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-make install && make verify && make agent-dev
+make install && make verify
+docker compose up -d postgres
+make agent-persist
 # other terminal:
-cd apps/web && npm install && npm run dev
+make web-dev
 ```
 
-Open [http://localhost:3000/console](http://localhost:3000/console) and click **Replay sample workflow**.
+Open [http://localhost:3000/console](http://localhost:3000/console). Leave **Program Launch** selected and click **Run this brief**.
 
-Or: `curl -s -X POST http://localhost:8080/v1/demo/replay`
+Five-minute script: [`docs/WALKTHROUGH.md`](docs/WALKTHROUGH.md). Unit tests without Docker: `make verify`. Recruiter gate (includes pause/resume): `make verify-recruiter`.
 
 ## Approval console
 
-Three real paths. Same screen.
+Seven stages on one screen. Program Launch is the lead.
 
 | | |
 | --- | --- |
-| **Ask** | Handbook, program launch, intake, or the Nobel trap |
-| **Replay** | Stored six-week launch — retrieve → tools → cite → approved execute |
-| **Pause** | Live run waits on **Approve draft** / **Reject** |
+| **Brief** | Launch bundle (calendar, budget, staff) before Run |
+| **Retrieve → Evaluate** | Keyword passages, READ tools, cited draft, grounding/policy |
+| **Pause** | Approve / Edit-and-approve / Reject + note |
+| **Record** | One internal task + ordered audit. Retry approval is a no-op |
 
 <p align="center">
-  <img src="docs/assets/screenshots/console-01-ask.png" alt="Approval console before a run" width="920" />
+  <img src="docs/assets/screenshots/console-01-input.png" alt="Program Launch input bundle and seven-stage operator player" width="920" />
 </p>
 
 <p align="center">
-  <img src="docs/assets/screenshots/console-02-replay.png" alt="Replayed executed run with citations, tools, and trace" width="920" />
+  <img src="docs/assets/screenshots/console-02-pause.png" alt="Live launch run paused with Approve, Edit-and-approve, and Reject" width="920" />
 </p>
 
 <p align="center">
-  <img src="docs/assets/screenshots/console-03-approval.png" alt="Live run paused at needs_approval with Approve and Reject" width="920" />
+  <img src="docs/assets/screenshots/console-03-record.png" alt="Executed launch record with citations, tools, and audit trace" width="920" />
 </p>
 
 ## Three briefs
@@ -110,7 +121,7 @@ Engagement writeups (discovery through handover): [`docs/engagement/`](docs/enga
 
 | Now | Next (this repo) | Later / skip |
 | --- | --- | --- |
-| Tools, cited RAG, MCP-shaped catalog, HITL, offline evals, FDE docs | **OPS-05** hybrid retrieval, **OPS-08** cost CI, **OPS-07** streaming timeline | Live providers, hosted demo, `v0.1.0` |
+| Tools, keyword RAG, MCP-shaped catalog, HITL, durable pause/resume, one internal task, offline evals, FDE docs | **OPS-05B** hybrid retrieval, **OPS-08** cost CI, **OPS-07** streaming | Live providers, hosted demo, `v0.1.0` |
 | | | **Skip:** fine-tune, voice clones, travel planner, triple-cloud capstone |
 
 Daily board: [`docs/DAILY.md`](docs/DAILY.md) · skill map: [`docs/FDE-ROADMAP.md`](docs/FDE-ROADMAP.md)
@@ -122,9 +133,9 @@ One customer-shaped system instead of eight course toys. The FDE lifecycle (disc
 | FDE skill | In this repo | Honest gap |
 | --- | --- | --- |
 | When to use an agent | [`docs/cases/01-should-this-be-an-agent.md`](docs/cases/01-should-this-be-an-agent.md) | — |
-| Grounded RAG | Citation allowlist + golden set | Dense/hybrid is OPS-05 |
+| Grounded RAG | Keyword retrieval + citation allowlist + golden set | Dense/hybrid is OPS-05B |
 | MCP / tool RBAC | Four tools, WRITE pending | No Entra / multi-tenant OAuth |
-| HITL | LangGraph `interrupt` + console | Streaming UX is OPS-07 |
+| HITL | LangGraph `interrupt` + durable resume + console | Streaming UX is OPS-07 |
 | Evals as a gate | `make eval-offline` | Not yet a cost/deploy CI fail (OPS-08) |
 | Discovery / handover | [`docs/engagement/`](docs/engagement/) | No priced SoW |
 | Decomposition cases | [`docs/cases/`](docs/cases/) | Three cases, not a 10-scenario library |
@@ -144,7 +155,8 @@ Sister overlays (do not duplicate): [evidence pipeline](https://github.com/moise
 | Demo replay (no keys) | **done** | `POST /v1/demo/replay` |
 | Offline eval | **done** | `make eval-offline` |
 | Approval console | **done** | `apps/web` |
-| pgvector hybrid | pending | OPS-05 — Compose image is present |
+| Durable runs / checkpoints / task ledger | **done** | `make verify-recruiter` — restart while paused, one task |
+| pgvector hybrid | pending | OPS-05B — do not start a search-demo repo |
 | Cost CI budget gate | pending | OPS-08 |
 | Streaming tool-state | pending | OPS-07 |
 | Live OpenAI / Claude / Bedrock | pending | Fake stays default |
@@ -154,12 +166,14 @@ Sister overlays (do not duplicate): [evidence pipeline](https://github.com/moise
 Python 3.11+, Node 20+, Docker optional.
 
 ```bash
-make verify          # ruff + pytest
-make eval-offline    # golden-set report
-make demo            # print stored recruiter run
-make mcp             # stdio tool server
-docker compose up --build
+make verify              # ruff + unit tests (no Docker)
+make verify-recruiter    # Compose Postgres + persistence gate
+make agent-persist       # AGENT_PERSISTENCE=postgres on :8080
+make web-dev             # console on :3000
+make eval-offline        # golden-set report
 ```
+
+Restart demo: create a launch run, `Ctrl-C` the agent, `make agent-persist` again, then approve the same `thread_id`. Reload `/console?run=<id>` if the page was closed.
 
 No provider credential is required. `AGENT_PROVIDER=fake` is the supported path.
 
@@ -179,7 +193,7 @@ docs/assets/            Marks, diagrams, console screenshots
 
 ## Status and limitations
 
-**Status:** scaffold toward `v0.1.0`. OPS-01–04, 11–12 are done. Hybrid retrieval, cost CI, and a hosted demo are not.
+**Status:** scaffold toward `v0.1.0`. OPS-01–05A, 11–12 are done. Hybrid retrieval (OPS-05B), streaming, cost CI, live providers, and a hosted demo are not in this 48-hour slice.
 
 This is a public reference — not customer production, not a live Infra24 deploy, not AWS AgentCore, not ServiceNow ownership.
 

@@ -1,9 +1,11 @@
 # Console screenshots
 
-Captured from the local approval console (`apps/web` + fake provider). Recapture after the HITL or replay path changes.
+Captured from the local operator console (`apps/web` + fake provider + Compose Postgres). Recapture after the player or approval path changes.
 
 | File | Scene |
 | --- | --- |
-| [`console-01-ask.png`](console-01-ask.png) | Empty console, three briefs |
-| [`console-02-replay.png`](console-02-replay.png) | Replay sample workflow — executed, citations, tools, trace |
-| [`console-03-approval.png`](console-03-approval.png) | Live launch brief paused at `needs_approval` |
+| [`console-01-input.png`](console-01-input.png) | Program Launch bundle + seven-stage player before Run |
+| [`console-02-pause.png`](console-02-pause.png) | Live launch paused: Approve / Edit-and-approve / Reject |
+| [`console-03-record.png`](console-03-record.png) | Executed launch — citations, tools, and audit after the write |
+
+Copies also live under `apps/web/public/screenshots/` for the homepage.
