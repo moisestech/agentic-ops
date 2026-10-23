@@ -25,7 +25,7 @@ jobs:
       - name: Ruff
         run: .venv/bin/ruff check services/agent
       - name: Tests
-        run: .venv/bin/pytest -q
+        run: ../../.venv/bin/pytest -q
         working-directory: services/agent
       - name: Offline eval
         run: .venv/bin/python -m agentic_ops.evals.harness --provider fake
